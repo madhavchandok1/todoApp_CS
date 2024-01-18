@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "c6mRJaQ7TJhmPtXp4Wz26ANsC5vYeKPXe6sLeQ1Fs4k=",
+  "Hash": "dP+qOc3L2p+QHbCPKCpqVb7FCyQbdcBX40UYeqIWcNo=",
   "Source": "NotesApp",
   "BasePath": "_content/NotesApp",
   "Mode": "Default",
@@ -47,10 +47,10 @@
       "OriginalItemSpec": "C:\\Users\\madha\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.0\\staticwebassets\\QuickGrid.razor.js"
     },
     {
-      "Identity": "C:\\Users\\madha\\Desktop\\NOTES APPLICATION\\NotesApp\\NotesApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\NotesApp.styles.css",
+      "Identity": "C:\\Users\\madha\\Desktop\\NOTES APPLICATION\\todoApp_CS\\NotesApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\NotesApp.styles.css",
       "SourceId": "NotesApp",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\madha\\Desktop\\NOTES APPLICATION\\NotesApp\\NotesApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\madha\\Desktop\\NOTES APPLICATION\\todoApp_CS\\NotesApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/NotesApp",
       "RelativePath": "NotesApp.styles.css",
       "AssetKind": "All",
@@ -63,7 +63,7 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\madha\\Desktop\\NOTES APPLICATION\\NotesApp\\NotesApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\NotesApp.styles.css"
+      "OriginalItemSpec": "C:\\Users\\madha\\Desktop\\NOTES APPLICATION\\todoApp_CS\\NotesApp\\obj\\Debug\\net8.0\\scopedcss\\bundle\\NotesApp.styles.css"
     }
   ]
 }

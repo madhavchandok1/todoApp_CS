@@ -8269,11 +8269,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\madha\\Desktop\\NOTES APPLICATION\\NotesApp\\NotesApp\\NotesApp.csproj",
+      "projectUniqueName": "C:\\Users\\madha\\Desktop\\NOTES APPLICATION\\todoApp_CS\\NotesApp\\NotesApp.csproj",
       "projectName": "NotesApp",
-      "projectPath": "C:\\Users\\madha\\Desktop\\NOTES APPLICATION\\NotesApp\\NotesApp\\NotesApp.csproj",
+      "projectPath": "C:\\Users\\madha\\Desktop\\NOTES APPLICATION\\todoApp_CS\\NotesApp\\NotesApp.csproj",
       "packagesPath": "C:\\Users\\madha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\madha\\Desktop\\NOTES APPLICATION\\NotesApp\\NotesApp\\obj\\",
+      "outputPath": "C:\\Users\\madha\\Desktop\\NOTES APPLICATION\\todoApp_CS\\NotesApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\madha\\AppData\\Roaming\\NuGet\\NuGet.Config",

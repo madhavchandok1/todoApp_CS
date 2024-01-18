@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BTNZmDs+40dEHdx6k4RhYpODYYYW1Sd47qoOkFX6370IOR58wXdlbOga6uXy98ArPgNU973K1oRq2S1la53yxQ==",
+  "dgSpecHash": "lpgnwlQvSFf3qNzs6eu6ZqHtkO0SDK5/AcxozTIAlSAkAkY7xFazg2SpHT/i/Rp9G6GQiPXx1DUsODxn98NVVw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\madha\\Desktop\\NOTES APPLICATION\\NotesApp\\NotesApp\\NotesApp.csproj",
+  "projectFilePath": "C:\\Users\\madha\\Desktop\\NOTES APPLICATION\\todoApp_CS\\NotesApp\\NotesApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\madha\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\madha\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
