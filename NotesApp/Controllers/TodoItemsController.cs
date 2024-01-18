@@ -1,23 +1,85 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.Operations;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using NotesApp.Models;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Security.Claims;
+using Microsoft.IdentityModel.Tokens;
+using Azure.Identity;
 
 namespace NotesApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class TodoItemsController : ControllerBase
     {
         private readonly TodoContext _context;
+        private readonly IConfiguration _configuration;
 
-        public TodoItemsController(TodoContext context)
+        public TodoItemsController(TodoContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration = configuration;
+        }
+
+        //Helper method to generate JWT Token
+        private string GenerateJwtToken(User user)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var secretKey = _configuration["Jwt:SecretKey"];
+            if (secretKey != null)
+            {
+                var key = Encoding.ASCII.GetBytes(secretKey);
+
+
+                var tokenDescriptor = new SecurityTokenDescriptor
+                {
+                    Subject = new ClaimsIdentity(new[]
+                    {
+                        new Claim(ClaimTypes.Name, user.Username),
+                    }),
+                    Expires = DateTime.UtcNow.AddHours(1),
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
+                    Audience = "todoApp",
+                    Issuer = "Madhav"
+                   
+                };
+
+                var token = tokenHandler.CreateToken(tokenDescriptor);
+                return tokenHandler.WriteToken(token);
+            }
+            return "";
+        }
+
+        //POST: api/TodoItems/Register
+        [HttpPost("Register")]
+        [AllowAnonymous]
+        public async Task<IActionResult> Register([FromBody] User userModel)
+        {
+            var newUser = new User { Username = userModel.Username, Password = userModel.Password };
+            _context.Users.Add(newUser);
+            await _context.SaveChangesAsync();
+
+            var token = GenerateJwtToken(newUser);
+            return Ok(new { Token = token });
+        }
+        //POST: api/TodoItems/Login
+        [HttpPost("Login")]
+        [AllowAnonymous]
+        public async Task<IActionResult> Login([FromBody] User userModel)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == userModel.Username && u.Password == userModel.Password);
+            if (user == null)
+                return Unauthorized();
+
+            var token = GenerateJwtToken(user);
+            return Ok(new { Token = token });
         }
 
         // GET: api/TodoItems
